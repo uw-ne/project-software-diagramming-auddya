@@ -1,6 +1,6 @@
-A coarse architecture for the project is described below:
+**A coarse architecture for the project is described below:**
 
-## Read Input
+# Read Input
  
 ```
 def guitar string_input():
@@ -20,9 +20,9 @@ def guitar string_input():
 
 ```
 
-## Solve Physics 
+# Solve Physics 
 
-  #Setup Problem
+  ### Setup Problem
 
 ```
 def solving_function_initialisation(guitar string parameters):
@@ -48,13 +48,13 @@ def solving_function_initialisation(guitar string parameters):
 
 ```
 
-  #Loop over First time step
+  ### Loop over First time step
 
-          Working algorithm:
-        ------
-        - Initially we load our initial condition into u_1 (Solution array at one time level back)
-        - Update u with special function that utilised u_1.
-        - Switch variables before next step
+  #### Working algorithm:
+  
+  - Initially we load our initial condition into u_1 (Solution array at one time level back)
+  - Update u with special function that utilised u_1.
+  - Switch variables before next step
 
 
 ```
@@ -75,15 +75,15 @@ def special_function_for_first_time_step(solution arrays, initial condition, oth
 	- Updated u and switched variables as an input for the next function
 
 ```
-   #Loop over all time steps,solve the problem and update time step
+   ### Loop over all time steps,solve the problem and update time step
         
-	Working algorithm:
-        ------
-        - Loop over temporal intervals
-        - Loop over spatial intervals
-        - Apply finite difference formula
-        - Insert boundary conditions after each time step
-        - Switch variables before next time step
+#### Working algorithm:
+------
+- Loop over temporal intervals
+- Loop over spatial intervals
+- Apply finite difference formula
+- Insert boundary conditions after each time step
+- Switch variables before next time step
 
 ```
 def main_function_simulation(arrays, other parameters):
@@ -95,20 +95,12 @@ def main_function_simulation(arrays, other parameters):
 	- arrays: Arrays from the previous function which will be used in the algorithm
 	- other parameters: Needed for the FD equation
 	
-	Working algorithm:
-	------
-	- Loop over temporal intervals
-	- Loop over spatial intervals
-	- Apply finite difference formula 
-	- Insert boundary conditions after each time step
-	- Switch variables before next time step
-
 	Output
 	------
 	- Array containing the solution of our problem for a given PDE, IC and BC
 ```
 
-##Visualise the output
+# Visualise the output
 
 ```
 def visualisation tools(string parameters, visualisation method, animation modes):
